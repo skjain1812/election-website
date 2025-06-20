@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>पारसनाथ ग्रुप (मुनि भक्त ग्रुप)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            background: linear-gradient(135deg, #ff6b35, #f7931e, #ffcb05);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+         /* .page {
+    width: 210mm;
+    height: 297mm;
+    background: white;
+    padding: 20mm;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+} */
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        .decorative-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e, #ffcb05, #f7931e, #ff6b35);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 15px;
+        }
+        
+        .main-title {
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+.election-info {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    padding: 20px 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #6b3000;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 2px solid #f9b233;
+    letter-spacing: 0.5px;
+}
+
+        
+        .contact-info {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .call-to-action {
+            background: linear-gradient(135deg, #ffe5e5, #fff0f0);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff6b35;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
+        }
+        
+        .candidates-table {
+            width: 100%;
+            height: 60%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .candidates-table th {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 15px 10px;
+            font-weight: 700;
+            font-size: 1.1em;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .candidates-table td {
+            padding: 15px 10px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        
+        
+        .candidates-table tr:nth-child(even) {
+            background: linear-gradient(135deg, #fff8f8, #fffafa);
+        }
+        
+        .candidates-table tr:hover {
+            background: linear-gradient(135deg, #ffe5e5, #fff0f0);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+        
+        .position-cell {
+            font-weight: 700;
+            color: #ff6b35;
+            text-align: center;
+            font-size: 2em;
+            background: linear-gradient(135deg, #fff5f5, #ffe8e8) !important;
+        }
+        
+        .name-cell {
+            font-weight: 700;
+            color: #333;
+            font-size: 1.3em;
+        }
+        
+        .photo-cell {
+            text-align: center;
+            width: 120px;
+        }
+        
+        .candidate-photo {
+            width: 100px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid #ff6b35;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .achievements-cell {
+            font-size: 0.95em;
+            line-height: 1.4;
+            color: #555;
+        }
+        
+        .manifesto-section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        
+        .manifesto-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #ff6b35;
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ff6b35;
+        }
+        
+        .manifesto-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        /* .manifesto-list li {
+            background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+            margin-bottom: 8px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+            font-size: 1em;
+            line-height: 1.4;
+            transition: transform 0.2s ease;
+        } */
+
+        .manifesto-list li {
+    background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+    margin-bottom: 8px;
+    padding: 12px 15px 12px 35px; /* extra left padding for arrow */
+    border-radius: 8px;
+    border-left: 4px solid #ff6b35;
+    font-size: 1.05em;
+    font-weight: 700; /* bold text */
+    color: #333;
+    line-height: 1.5;
+    position: relative;
+    transition: transform 0.2s ease;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.manifesto-list li::before {
+    content: "➤"; /* arrow symbol */
+    color: #ff6b35;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1em;
+}
+
+        .manifesto-list li:hover {
+            transform: translateX(5px);
+            background: linear-gradient(135deg, #ffeded, #ffd6d6);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .blessings-section, .supporters-section {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 15px;
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ff6b35;
+        }
+        
+        .blessings-content, .supporters-content {
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: #333;
+            text-align: justify;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 2.2em;
+            margin-top: 20px;
+        }
+        
+        @media print {
+            body { margin: 0; padding: 0; background: white; }
+            .page { margin: 0; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <div class="decorative-border"></div>
+        
+<div class="header">
+    <h1 class="main-title">पारसनाथ ग्रुप (मुनि भक्त ग्रुप)</h1>
+    <div class="election-info">
+        <div><strong>श्री पार्श्वनाथ दिगम्बर जैन मंदिर प्रबंध समिति चुनाव</strong></div>
+        <div><strong>🗓️ रविवार 29 जून 2025 | 🕙 प्रातः 10 बजे से 1 बजे तक</strong></div>
+        <div><strong>📍 स्थान: जैन धर्मशाला, मूर्ति वाली गली</strong></div>
+    </div>
+    <div class="contact-info">
+        <strong>संपर्क सूत्र:</strong> 7289031008, 9873273266, 9136680806, 9711062767
+    </div>
+</div>  
+        <div class="call-to-action">
+            पारसनाथ ग्रुप (मुनि भक्त ग्रुप) के सभी प्रत्याशियों को अपना वोट और समर्थन देकर विजयी बनाएं और मंदिर के प्रति आप अपने कर्तव्य का पालन कर और अधिकार का उपयोग कर मंदिर में मुनि भक्त कमेटी को लाएं।
+        </div>
+        
+        <table class="candidates-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">पद</th>
+                    <th style="width: 20%;">नाम</th>
+                    <th style="width: 15%;">फोटो</th>
+                    <th style="width: 50%;">उपलब्धियाँ</th>
+                </tr>
+            </thead>
+            <>
+                <tr>
+                    <td class="position-cell">अध्यक्ष</td>
+                    <td class="name-cell">संजय जैन<br>(साड़ी वाले)</td>
+                    <td class="photo-cell">
+                        <img src="sanjay_saree.jpg" alt="संजय जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">मंदिर समिति के पूर्व महामंत्री, अपने कार्यकाल में मंदिर में गुलाबी पत्थर का काम, मंदिर का सौंदर्यीकरण, संतों का चातुर्मास, और 6 मंदिरों की सामूहिक महावीर जयंती का आयोजन किया।</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">वरिष्ठ उपाध्यक्ष</td>
+                    <td class="name-cell">अनुज जैन CA</td>
+                    <td class="photo-cell">
+                        <img src="anuj.jpg" alt="अनुज जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">सफल CA फर्म के संचालक, मंदिर में प्रतिदिन अभिषेक पूजन कर्ता और मंदिर के फंड का बेहतरीन ऑडिट करने वाले।</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">उपाध्यक्ष</td>
+                    <td class="name-cell">राहुल जैन<br>(सुपुत्र श्री इंद्रसेन जैन)</td>
+                    <td class="photo-cell">
+                        <img src="rahul.jpg" alt="राहुल जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">मंदिर के मूल वेदी के निर्माणकर्ता, जैन भवन के शिलान्यासकर्ता, दानवीर परिवार।</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">उपाध्यक्ष</td>
+                    <td class="name-cell">संजय जैन<br>(सागर वाले)</td>
+                    <td class="photo-cell">
+                        <img src="sanjay_sagar.jpg" alt="संजय जैन सागर वाले" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">परम गुरु भक्त, सभी संतों की सेवा में और धार्मिक कार्यक्रमों के लिए सदैव तत्पर।</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">महामंत्री</td>
+                    <td class="name-cell">कमल कुमार जैन<br>(सुपुत्र श्री मंगत राम जैन)</td>
+                    <td class="photo-cell">
+                        <img src="kamal.jpg" alt="कमल कुमार जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">जैन मिलन ट्रस्टी, जैन परिवार यात्रा संघ के अध्यक्ष, अनेक तीर्थ यात्राओं के संयोजक, समाजसेवी, अनन्य मुनि भक्त। अनेक स्वास्थ्य कैंप लगवाना और साधु संतों को संघपति बनकर विहार कराना आदि आपकी अनेक उपलब्धियां हैं</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">मंत्री</td>
+                    <td class="name-cell">शुभम जैन<br>(सुपौत्र श्री सुखमाल चंद जैन चक्की वाले)</td>
+                    <td class="photo-cell">
+                        <img src="shubham.jpg" alt="शुभम जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">युवा जैन मिलन लक्ष्मी नगर के संस्थापक, मंदिर समिति के कार्यकाल में मंदिर में कुएं का निर्माण, युवाओं और बच्चों को धर्म से जोड़ने के लिए अनेक प्रकल्प, अनेक गौशालाओं में गौ ग्रास रथ चलवाया, गौ सेवा, वृक्षारोपण, जरुरतमंदों को वस्त्र वितरण आदि अनेक प्रकल्प<br>भारतीय जैन मिलन के केंद्रीय सदस्य, आल इंडिया जैन इंजिनीयर्स फोरम के क्षेत्रीय मंत्री</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Page 2 -->
+    <div class="page">
+        <div class="decorative-border"></div>
+        
+        <table class="candidates-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">पद</th>
+                    <th style="width: 20%;">नाम</th>
+                    <th style="width: 15%;">फोटो</th>
+                    <th style="width: 50%;">उपलब्धियाँ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="position-cell">प्रचार मंत्री<br>(निर्विरोध निर्वाचित)</td>
+                    <td class="name-cell">महावीर जैन<br>(दीपक)</td>
+                    <td class="photo-cell">
+                        <img src="mahaveer.jpg" alt="महावीर जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">निर्विरोध निर्वाचित, मंदिर सेवा में निरंतर सक्रिय, धार्मिक आयोजनों में विशेष भूमिका।</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">कोषाध्यक्ष</td>
+                    <td class="name-cell">ऋषभ जैन CA</td>
+                    <td class="photo-cell">
+                        <img src="rishabh.jpg" alt="ऋषभ जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">युवा जैन मिलन के कोषाध्यक्ष, मंदिर में प्रतिदिन अभिषेक पूजन कर्ता, और धार्मिक कार्यक्रमों में पूर्ण सहभागिता।</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">सह कोषाध्यक्ष</td>
+                    <td class="name-cell">आशु जैन</td>
+                    <td class="photo-cell">
+                        <img src="ashu.jpg" alt="आशु जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">युवा जैन मिलन के उपाध्यक्ष, मंदिर और समाज के विभिन्न आयोजनों में सक्रिय भागीदारी।</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">भंडारी</td>
+                    <td class="name-cell">गौरव जैन</td>
+                    <td class="photo-cell">
+                        <img src="gaurav.jpg" alt="गौरव जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">मंदिर में अभिषेक पूजन कर्ता और मंदिर के लिए पूर्ण समर्पित।</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">ऑडिटर</td>
+                    <td class="name-cell">विमल जैन<br>(सुपुत्र श्री सिद्ध कुमार जैन)</td>
+                    <td class="photo-cell">
+                        <img src="vimal.jpg" alt="विमल जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">मंदिर में प्रतिदिन अभिषेक पूजन कर्ता, मंदिर कार्यों में विशेष रुचि।</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">कार्यकारिणी सदस्य 1</td>
+                    <td class="name-cell">अक्षत जैन</td>
+                    <td class="photo-cell">
+                        <img src="akshat.jpg" alt="अक्षत जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">युवा जैन मिलन, लक्ष्मी नगर के प्रचार मंत्री, मंदिर मे अभिषेक पूजन कर्ता और मंदिर के कार्यक्रम के लिए विशेष रूचि, साधु संतो की सेवा आदि के लिए सदैव तत्पर एवं तीर्थ यात्राएं आयोजित करना।</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">कार्यकारिणी सदस्य 2</td>
+                    <td class="name-cell">मुकेश जैन (कागजी),<br>R-286</td>
+                    <td class="photo-cell">
+                        <img src="mukesh.jpg" alt="मुकेश जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">अनन्य मुनि भक्त, धार्मिक कार्यों और स्वाध्याय में विशेष रूचि</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">कार्यकारिणी सदस्य 3</td>
+                    <td class="name-cell">राजीव जैन</td>
+                    <td class="photo-cell">
+                        <img src="rajeev.jpg" alt="राजीव जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">जैन मिलन संयोजक, सामाजिक, धार्मिक और सेवा कार्यों में विशेष रूचि</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">कार्यकारिणी सदस्य 4</td>
+                    <td class="name-cell">राकेश जैन</td>
+                    <td class="photo-cell">
+                        <img src="rakesh.jpg" alt="राकेश जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">सामाजिक, धार्मिक कार्यों में विशेष रूचि, मंदिर मे अभिषेक पूजन कर्ता</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">कार्यकारिणी सदस्य 5</td>
+                    <td class="name-cell">संजीव जैन</td>
+                    <td class="photo-cell">
+                        <img src="sanjeev.jpg" alt="संजीव जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">अनन्य मुनि भक्त, धार्मिक कार्यों में विशेष रूचि</td>
+                </tr>
+                <tr>
+                    <td class="position-cell">कार्यकारिणी सदस्य 6</td>
+                    <td class="name-cell">सौरभ जैन<br>(रेलवे वाले)<br>A-18, ज्ञान कुंज</td>
+                    <td class="photo-cell">
+                        <img src="saurabh.jpg" alt="सौरभ जैन" class="candidate-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:120px; background:#ddd; border-radius:10px; border:3px solid #ff6b35; align-items:center; justify-content:center; color:#666; font-size:0.8em;">फोटो</div>
+                    </td>
+                    <td class="achievements-cell">युवा जैन मिलन के अध्यक्ष, सामाजिक, धार्मिक कार्यों में विशेष रूचि</td>
+                </tr>
+            </tbody>
+            </table>
+            </div>
+
+            <div class="page">
+      <div class="decorative-border"></div>
+      <div class="manifesto-section">
+        <h2 class="manifesto-title">घोषणा पत्र - मंदिर विकास और समाज सेवा के प्रस्तावित कार्य</h2>
+        <ul class="manifesto-list">
+<class="manifesto-list">
+  <li>मंदिर में साधु-संतों का आगमन पुनः शुरू कराना और संतों के चातुर्मास के लिए प्रयास करना।</li>
+  <li>मंदिर के विकास कार्य, जो वर्षों से रुके हुए थे, अब जोर-शोर से शुरू किए जाएंगे। शिखर पर लगे कलश जैसे उपेक्षित हिस्सों की देखभाल प्राथमिकता होगी।</li>
+  <li>मंदिर की वित्तीय व्यवस्था में सुधार होगा, जिसे केवल योग्य और प्रमाणित चार्टर्ड अकाउंटेंट्स द्वारा संभाला जाएगा।</li>
+  <li>मंदिर के पिछले कुछ वर्षों से नहीं लग रहे चिट्ठे का उचित ऑडिट कराके मंदिर का लेखा-जोखा समाज के सामने पारदर्शिता के साथ प्रस्तुत करना।</li>
+  <li>मंदिर की सदस्यता खोलकर क्षेत्र के सभी जैन परिवारों को मंदिर से जोड़ना।</li>
+  <li>पूर्व कमेटी द्वारा काटे गए सदस्यों को पुनः मंदिर से जोड़कर समाज को एकजुट करना।</li>
+  <li>मंदिर की गली में प्रशासन की सहायता से साफ-सफाई का उचित प्रबंध करना ताकि दर्शनार्थियों को असुविधा न हो।</li>
+  <li>कानून के दायरे में मंदिर के इर्द-गिर्द 100–200 मीटर की परिधि में मांसाहार की दुकानों पर रोक लगवाने का प्रयास करना।</li>
+  <li>मंदिर का सौंदर्यीकरण कराना।</li>
+  <li>मंदिर समिति में समाज के श्रेष्ठियों को पुनः संरक्षक बनाना।</li>
+  <li>मंदिर में समय-समय पर धार्मिक कार्यक्रम, विधान, संतों के प्रवचन आदि पूर्ण उत्साह से कराना।</li>
+  <li>मंदिर से युवाओं, बच्चों और सम्पूर्ण समाज को जोड़ने के लिए अनेक प्रकल्प शुरू करना।</li>
+  <li>सभी संस्थाओं जैसे महिला मिलन, महिला मंडल, युवा समितियों को मंदिर से पुनः जोड़ना।</li>
+  <li>सम्पूर्ण समाज जनों की डायरेक्टरी बनाना।</li>
+  <li>मंदिर के शिखर की समय-समय पर साफ-सफाई कराना।</li>
+  <li>मंदिर में प्रत्येक रविवार को बच्चों की पाठशाला सुचारु रूप से पुनः शुरू कराना और बड़ों के लिए स्वाध्याय शिविर प्रारम्भ कराना।</li>
+  <li>संविधान के अनुसार प्रत्येक 6 माह में आम सभा बुलाना।</li>
+  <li>यह सुनिश्चित करना कि भविष्य में कोई भी निर्णय आम सभा की पूर्ण सहमति और विश्वास के साथ ही लिया जाए, ताकि मंदिर की गरिमा और संसाधनों की सुरक्षा बनी रहे।</li>
+  <li>समाज से एकत्रित की गई दान राशि का सही उपयोग केवल मंदिर के ही कार्यों में करना।</li>
+  <li>मंदिर वाली गली जिसका नाम पूर्व में "जैन मंदिर मार्ग" था, उसकी पुनर्स्थापना कराने का प्रयास करना।</li>
+
+
+        </ul>
+      </div>
+      <div class="blessings-section">
+        <h2 class="section-title">आशीर्वाद</h2>
+        <div class="blessings-content">
+          परम पूज्य आचार्य श्री समय सागर जी महाराज, आचार्य श्री विशुद्ध सागर जी महाराज, आचार्य श्री वसुनंदी जी, आचार्य श्री पुष्पदंत सागर जी, आचार्य श्री अतिवीर जी महाराज, जगतपूज्य मुनिपुंगव श्री सुधासागर जी महाराज, मुनि श्री प्रथमानंद जी मुनिराज, गणिनी आर्यिका ज्ञानमती माताजी, आर्यिका दृष्टि भूषण माताजी, आर्यिका सरस्वती माताजी
+        </div>
+      </div>
+      <div class="supporters-section">
+        <h2 class="section-title">समर्थक</h2>
+        <div class="supporters-content">
+          भारतीय जैन मिलन, युवा जैन मिलन, महिला जैन मिलन, महिला मंडल, जैन परिवार यात्रा संघ, विश्व जैन संगठन लक्ष्मी नगर शकरपुर क्षेत्र, स्याद्वाद युवा क्लब (नॉएडा सेगमेंट), जिनशासन एकता संघ, राष्ट्रीय स्वयंसेवक संघ, भारतीय जैन मिलन केंद्रीय समिति आदि।<br><br>
+          <strong>व्यक्तिगत समर्थन:</strong> श्री सुखमाल चंद जैन (चक्की वाले, पूर्व अध्यक्ष), श्री राजेंद्र प्रसाद जैन (साहित्यरत्न, पूर्व अध्यक्ष), श्री प्रेमचंद जैन संजय जैन (वैद्य जी, पूर्व अध्यक्ष), श्री अशोक जैन (नंदी गारमेंट्स, पूर्व अध्यक्ष), श्री नेमचंद जैन (पूर्व अध्यक्ष), श्री सुभाष जैन रेलवे वाले (पूर्व केशियर),  श्री सुनील जैन (पूर्व केशियर), श्री अशोक जैन आलोक जैन (तरुण मित्र परिषद्), श्री संजय जैन (कागज़ी), श्री सिद्ध कुमार जैन, श्री प्रवीण जैन संयम जैन (रंछाड़ वाले), श्री सुशील जैन (बर्तन वाले), श्री माम चंद जैन प्रवीण जैन परिवार, श्री सुभाष जैन बिजली वाले परिवार, श्रीमति किरनमाला जैन परिवार, श्री मुकेश जैन परिवार, श्री संजय जैन परिवार, श्री राजीव जैन परिवार, श्री राजेश जैन परिवार, श्री मधुर जैन, श्री विवेक जैन परिवार (वर्धमान वाले), श्री पंकज जैन परिवार, श्री देवेंद्र कुमार जैन परिवार, सम्पूर्ण सागर वाला परिवार, श्री अमन जैन बैंक एन्क्लेव, श्री संजय जैन CA , सम्पूर्ण भबीसे वाला परिवार, श्री सलेक चंद जैन परिवार, श्री जुगमंदर दास जैन परिवार , श्री रमेश चंद जैन परिवार, श्री राजकुमार जैन परिवार, श्री सुखमाल चंद जैन परिवार, श्री अजय जैन करनावल वाले, श्री राकेश जैन करनावल वाले, श्री सुनील जैन (N 36),  श्री निर्मल जैन परिवार, श्री सुरेश चंद जैन परिवार, श्री संदीप जैन अमरदीप जैन परिवार, श्री पूरन चंद जैन परिवार, श्री MP जैन परिवार
+        </div>
+      </div>
+      <div class="footer">
+        मंदिर के विकास में, आपके सहयोग की आस में - पारसनाथ ग्रुप
+      </div>
+    </div>
+            </body>
+            </html>
+            
